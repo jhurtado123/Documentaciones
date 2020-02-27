@@ -1,7 +1,7 @@
 <h1>Mongoose</h1>
 --------
 
-Sirve para mapear objetos en la base de datos ( royo doctrine o eloquent )
+ODM para mapear documentoa de la base de datos ( royo doctrine o eloquent pero no relacional )
 
 **odm** -> object document mapping , bases de datos no relacionales
 
@@ -51,11 +51,11 @@ const Cat = mongoose.model('Cat', {name: String, age: Number});
 
 Una vez instanciada está colección prodremos usarlo para consultar en mongo, insertar, update etc.
 
-Ejemplo de inserición de un documento en la colección Cat:
+Ejemplo de inserción de un documento en la colección Cat:
 
 ```javascript
 const kitty = new Cat({name: 'Zilawddjian'});
-kitty.save() //Guardamos un documento
+kitty.save() //Guardamos el documento
 
 Cat.find({}, {name:1, _id:0}); //Buscamos todos los documentos en la colección Cat
 ```
@@ -88,7 +88,7 @@ const catSchema = new Schema({
   },
   age: {
     type: Number,
-      match: '[0-9]/g'
+    match: '[0-9]/g'
   }
 });
 ```
